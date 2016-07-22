@@ -24,6 +24,9 @@
 -- Connection group types
 --
 
+CREATE EXTENSION pgcrypto;
+
+
 CREATE TYPE guacamole_connection_group_type AS ENUM(
     'ORGANIZATIONAL',
     'BALANCING'
@@ -351,4 +354,8 @@ FROM (
 ) permissions (username, affected_username, permission)
 JOIN guacamole_user          ON permissions.username = guacamole_user.username
 JOIN guacamole_user affected ON permissions.affected_username = affected.username;
+
+-- Create user and hash password with salt
+INSERT INTO guacamole_user (username, password_hash, password_salt)
+     VALUES ('atumsoft', digest('atumsoft'||'D67C5CBF5B01C9F91932E3B8DEF5E5F8','sha256'), E'\\xD67C5CBF5B01C9F91932E3B8DEF5E5F8');
 
