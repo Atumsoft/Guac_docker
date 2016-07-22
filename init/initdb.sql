@@ -359,3 +359,26 @@ JOIN guacamole_user affected ON permissions.affected_username = affected.usernam
 INSERT INTO guacamole_user (username, password_hash, password_salt)
      VALUES ('atumsoft', digest('atumsoft'||'D67C5CBF5B01C9F91932E3B8DEF5E5F8','sha256'), E'\\xD67C5CBF5B01C9F91932E3B8DEF5E5F8');
 
+-- Let's add some connections
+INSERT INTO guacamole_connection (connection_name, protocol) VALUES ('WindowsMachine', 'rdp');
+
+-- Set up the settings for machine we just added
+INSERT INTO guacamole_connection_parameter VALUES ((SELECT connection_id FROM guacamole_connection WHERE connection_name = 'WindowsMachine' AND parent_id IS NULL)
+, 'username', 'atumsoft');
+INSERT INTO guacamole_connection_parameter VALUES ((SELECT connection_id FROM guacamole_connection WHERE connection_name = 'WindowsMachine' AND parent_id IS NULL)
+, 'password', 'pean51');
+INSERT INTO guacamole_connection_parameter VALUES ((SELECT connection_id FROM guacamole_connection WHERE connection_name = 'WindowsMachine' AND parent_id IS NULL)
+, 'hostname', 'atumsoft.ftp.sh');
+INSERT INTO guacamole_connection_parameter VALUES ((SELECT connection_id FROM guacamole_connection WHERE connection_name = 'WindowsMachine' AND parent_id IS NULL)
+, 'port', '13389');
+INSERT INTO guacamole_connection_parameter VALUES ((SELECT connection_id FROM guacamole_connection WHERE connection_name = 'WindowsMachine' AND parent_id IS NULL)
+, 'security', 'nla');
+INSERT INTO guacamole_connection_parameter VALUES ((SELECT connection_id FROM guacamole_connection WHERE connection_name = 'WindowsMachine' AND parent_id IS NULL)
+, 'ignore-cert', 'true');
+
+
+-- Grant our user permission to an added machine 
+INSERT INTO guacamole_connection_permission VALUES (
+  (SELECT user_id FROM guacamole_user WHERE username = 'atumsoft'), 
+  (SELECT connection_id FROM guacamole_connection WHERE connection_name = 'WindowsMachine' AND parent_id IS NULL), 
+  'READ');
