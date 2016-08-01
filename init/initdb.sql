@@ -405,6 +405,26 @@ INSERT INTO guacamole_connection_parameter VALUES (
 	, 'port', '23389');
 -----------------------------------------------------------------------------------
 
+-----------------------------------------------------------------------------------
+-- LINUXMACHINE2
+-- Let's add a connection
+INSERT INTO guacamole_connection (connection_name, protocol) VALUES ('LinuxMachine2', 'rdp');
+
+-- Set up the settings for machine we just added
+INSERT INTO guacamole_connection_parameter VALUES (
+	(SELECT connection_id FROM guacamole_connection WHERE connection_name = 'LinuxMachine2' AND parent_id IS NULL)
+	, 'username', 'atumsoft');
+INSERT INTO guacamole_connection_parameter VALUES (
+	(SELECT connection_id FROM guacamole_connection WHERE connection_name = 'LinuxMachine2' AND parent_id IS NULL)
+	, 'password', 'pean51');
+INSERT INTO guacamole_connection_parameter VALUES (
+	(SELECT connection_id FROM guacamole_connection WHERE connection_name = 'LinuxMachine2' AND parent_id IS NULL)
+	, 'hostname', 'atumsoft.ftp.sh');
+INSERT INTO guacamole_connection_parameter VALUES (
+	(SELECT connection_id FROM guacamole_connection WHERE connection_name = 'LinuxMachine2' AND parent_id IS NULL)
+	, 'port', '23389');
+-----------------------------------------------------------------------------------
+
 --=================================================================================
 -- USERS
 --=================================================================================
@@ -423,5 +443,9 @@ INSERT INTO guacamole_connection_permission VALUES (
 INSERT INTO guacamole_connection_permission VALUES (
   (SELECT user_id FROM guacamole_user WHERE username = 'atumsoft'), 
   (SELECT connection_id FROM guacamole_connection WHERE connection_name = 'LinuxMachine' AND parent_id IS NULL), 
+  'READ');
+INSERT INTO guacamole_connection_permission VALUES (
+  (SELECT user_id FROM guacamole_user WHERE username = 'atumsoft'), 
+  (SELECT connection_id FROM guacamole_connection WHERE connection_name = 'LinuxMachine2' AND parent_id IS NULL), 
   'READ');
 -----------------------------------------------------------------------------------
