@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../Guac_Site-master/guacamole/guacamole.iml" filepath="$PROJECT_DIR$/../Guac_Site-master/guacamole/guacamole.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/guacamole-0.9.9.iml" filepath="$PROJECT_DIR$/.idea/guacamole-0.9.9.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Guac_Site-master/extensions/guacamole-auth-jdbc/guacamole-auth-jdbc.iml" filepath="$PROJECT_DIR$/../Guac_Site-master/extensions/guacamole-auth-jdbc/guacamole-auth-jdbc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Guac_Site-master/extensions/guacamole-auth-jdbc/modules/guacamole-auth-jdbc-base/guacamole-auth-jdbc-base.iml" filepath="$PROJECT_DIR$/../Guac_Site-master/extensions/guacamole-auth-jdbc/modules/guacamole-auth-jdbc-base/guacamole-auth-jdbc-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Guac_Site-master/extensions/guacamole-auth-jdbc/modules/guacamole-auth-jdbc-mysql/guacamole-auth-jdbc-mysql.iml" filepath="$PROJECT_DIR$/../Guac_Site-master/extensions/guacamole-auth-jdbc/modules/guacamole-auth-jdbc-mysql/guacamole-auth-jdbc-mysql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Guac_Site-master/extensions/guacamole-auth-jdbc/modules/guacamole-auth-jdbc-postgresql/guacamole-auth-jdbc-postgresql.iml" filepath="$PROJECT_DIR$/../Guac_Site-master/extensions/guacamole-auth-jdbc/modules/guacamole-auth-jdbc-postgresql/guacamole-auth-jdbc-postgresql.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Guac_Site-master/extensions/guacamole-auth-ldap/guacamole-auth-ldap.iml" filepath="$PROJECT_DIR$/../Guac_Site-master/extensions/guacamole-auth-ldap/guacamole-auth-ldap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Guac_Site-master/extensions/guacamole-auth-noauth/guacamole-auth-noauth.iml" filepath="$PROJECT_DIR$/../Guac_Site-master/extensions/guacamole-auth-noauth/guacamole-auth-noauth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Guac_Site-master/guacamole-client.iml" filepath="$PROJECT_DIR$/../Guac_Site-master/guacamole-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Guac_Site-master/guacamole-common/guacamole-common.iml" filepath="$PROJECT_DIR$/../Guac_Site-master/guacamole-common/guacamole-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Guac_Site-master/guacamole-common-js/guacamole-common-js.iml" filepath="$PROJECT_DIR$/../Guac_Site-master/guacamole-common-js/guacamole-common-js.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Guac_Site-master/guacamole-ext/guacamole-ext.iml" filepath="$PROJECT_DIR$/../Guac_Site-master/guacamole-ext/guacamole-ext.iml" />
+    </modules>
+  </component>
+</project>

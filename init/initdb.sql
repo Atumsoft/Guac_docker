@@ -430,22 +430,22 @@ INSERT INTO guacamole_connection_parameter VALUES (
 --=================================================================================
 
 -----------------------------------------------------------------------------------
--- ATUMSOFT
+-- atumate
 -- Create user and hash password with salt
 INSERT INTO guacamole_user (username, password_hash, password_salt)
-     VALUES ('atumsoft', digest('atumsoft'||'D67C5CBF5B01C9F91932E3B8DEF5E5F8','sha256'), E'\\xD67C5CBF5B01C9F91932E3B8DEF5E5F8');
+     VALUES ('atumate', digest('atumate'||'D67C5CBF5B01C9F91932E3B8DEF5E5F8','sha256'), E'\\xD67C5CBF5B01C9F91932E3B8DEF5E5F8');
 
 -- Grant our user permission to an added machine 
 INSERT INTO guacamole_connection_permission VALUES (
-  (SELECT user_id FROM guacamole_user WHERE username = 'atumsoft'), 
+  (SELECT user_id FROM guacamole_user WHERE username = 'atumate'), 
   (SELECT connection_id FROM guacamole_connection WHERE connection_name = 'WindowsMachine' AND parent_id IS NULL), 
   'READ');
 INSERT INTO guacamole_connection_permission VALUES (
-  (SELECT user_id FROM guacamole_user WHERE username = 'atumsoft'), 
+  (SELECT user_id FROM guacamole_user WHERE username = 'atumate'), 
   (SELECT connection_id FROM guacamole_connection WHERE connection_name = 'LinuxMachine' AND parent_id IS NULL), 
   'READ');
 INSERT INTO guacamole_connection_permission VALUES (
-  (SELECT user_id FROM guacamole_user WHERE username = 'atumsoft'), 
+  (SELECT user_id FROM guacamole_user WHERE username = 'atumate'), 
   (SELECT connection_id FROM guacamole_connection WHERE connection_name = 'LinuxMachine2' AND parent_id IS NULL), 
   'READ');
 -----------------------------------------------------------------------------------
